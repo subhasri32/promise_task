@@ -13,21 +13,19 @@ const region2=fetch("https://restcountries.eu/rest/v2/region/asia")
 .then((data) => data.json())
 const arr=Promise.all([region1,region2])
 .then(values => {
-  return [].concat.apply([], values)
+  console.log(values[0].concat(values[1])
 }
-<!-- combine the values oftwo regions: -->
-    const region1=fetch("https://restcountries.eu/rest/v2/region/europe")
-    .then((data) => data.json())
-    const region2=fetch("https://restcountries.eu/rest/v2/region/asia")
-    .then((data) => data.json())
-    Promise.all([region1,region2])
-    .then(values => {
-    const country=[];
-    for(i=0;i<region1.length;i++){
-        country.push(region1)
-    }
-    for(i=0;i<region2.length;i++){
-        country.push(region2)
-    }
-    }
+<!-- task2:print sapnish language in europe
+fetch("https://restcountries.eu/rest/v2/lang/es")
+.then((data) => data.json())
+.then((values)=>values.forEach((country)=>createLanguage(country)))
+      
+ function createLanguage({region,languages}){
+  let i=0;
+  if((region=="europe")&&(languages[i].name=="Spanish")){
+    i=i+1;
+    console.log(region);
+  }
+} -->
+
 </body>

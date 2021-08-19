@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang-"en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+	<META NAME="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title> 
+<body>
+    <!-- concatinating both array values -->
+     const region1=fetch("https://restcountries.eu/rest/v2/region/europe")
+.then((data) => data.json())
+const region2=fetch("https://restcountries.eu/rest/v2/region/asia")
+.then((data) => data.json())
+const arr=Promise.all([region1,region2])
+.then(values => {
+  return [].concat.apply([], values)
+}
+<!-- combine the values oftwo regions: -->
+    const region1=fetch("https://restcountries.eu/rest/v2/region/europe")
+    .then((data) => data.json())
+    const region2=fetch("https://restcountries.eu/rest/v2/region/asia")
+    .then((data) => data.json())
+    Promise.all([region1,region2])
+    .then(values => {
+    const country=[];
+    for(i=0;i<region1.length;i++){
+        country.push(region1)
+    }
+    for(i=0;i<region2.length;i++){
+        country.push(region2)
+    }
+    }
+</body>
